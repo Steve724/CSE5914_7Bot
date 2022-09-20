@@ -5,7 +5,7 @@ import {Chatbot} from "react-chatbot-kit";
 import "./chatBot.css"
 export default function MyComponent(){
     return (
-        <div style={{position:"absolute",marginLeft:"800px",marginTop:"200px"}}>
+        <div style={{position:"absolute",marginLeft:"800px",marginTop:"250px"}}>
             <Chatbot
                 config={config}
                 messageParser={MessageParser}

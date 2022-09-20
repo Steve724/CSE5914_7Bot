@@ -2,10 +2,18 @@
 import React from 'react';
 import {useSelector,useDispatch} from "react-redux";
 import {changeSelector,selectSelector} from "../redux/features/selector/selectorSlice";
+import {setStep,selectStep} from "../redux/features/step/stepSlice";
+import {setCocktail,selectCocktail} from "../redux/features/cocktail/cocktailSlice";
+import {setCocktailNumber,selectCocktailNumber} from "../redux/features/cocktailNumber/cocktailNumberSlice";
+import {setCocktailArr,selectCocktailArr} from "../redux/features/cocktailArr/cocktailArrSlice";
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
-    const selector =useSelector(selectSelector)
+    const selector =useSelector(selectSelector);
     const dispatch = useDispatch();
+    const step = useSelector(selectStep);
+    const cocktail = useSelector(selectCocktail);
+    const cocktailNumber = useSelector(selectCocktailNumber);
+    const cocktailArr = useSelector(selectCocktailArr);
     const handleHello = () => {
         const botMessage = createChatBotMessage('Hello. Nice to meet you.');
 
@@ -16,8 +24,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     };
 
     const handleTableNumber = () =>{
-        const botMessage = createChatBotMessage('Please provide your first name. So we can invite you to our vip club.');
-
+        const botMessage = createChatBotMessage('Do you have specific choice ?');
+        //change step to 1
+        dispatch(setStep(1));
         setState((prev) => ({
             ...prev,
             messages: [...prev.messages, botMessage],
@@ -34,6 +43,24 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }));
     };
 
+    const handleCocktail = () => {
+        const botMessage = createChatBotMessage('How many bottles are needed ?');
+        setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, botMessage],
+        }));
+    }
+
+    const handleCocktailNumber = () => {
+        const botMessage = createChatBotMessage('Do you have another specific choice ?');
+        // dispatch(setStep(2));
+        // dispatch(setCocktailArr(cocktailObject));
+        setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, botMessage],
+        }));
+    }
+
     // Put the handleHello function in the actions object to pass to the MessageParser
     return (
         <div>
@@ -42,7 +69,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
                     actions: {
                         handleHello,
                         handleTableNumber,
-                        handleSelector
+                        handleSelector,
+                        handleCocktail,
+                        handleCocktailNumber
                     },
                 });
             })}
