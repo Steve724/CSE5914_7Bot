@@ -2,12 +2,13 @@ import React from "react";
 import {useSelector,useDispatch} from "react-redux";
 import {setTableNumber,selectTableNumber} from "../redux/features/tableNumber/tableNumberSlice";
 import {setCocktailArr,selectCocktailArr} from "../redux/features/cocktailArr/cocktailArrSlice";
-import {setNumberArr,selectNumberArr} from "../redux/features/numberArr/numberArrSlice";
+import {setNumberArr,selectNumberArr,plusOneNumber,decOneNumber} from "../redux/features/numberArr/numberArrSlice";
 
 export default function Receipt(){
     const tableNumber = useSelector(selectTableNumber);
     const cocktailArr = useSelector(selectCocktailArr);
     const numberArr = useSelector(selectNumberArr);
+    const dispatch = useDispatch();
     return (
         <div>
 
@@ -17,14 +18,14 @@ export default function Receipt(){
                 <tr>
                     <td>Table </td>
                     <td>{tableNumber}</td>
-                    <td style={{paddingLeft:"210px"}}>bottles</td>
+                    <td style={{paddingLeft:"230px"}}>bottles</td>
                 </tr>
             </table>
             <div>
                 {
                     cocktailArr.map(item=>{
                         return (
-                            <div style={{width:'250px'}}>
+                            <div style={{width:'220px'}}>
                                 {item}
                             </div>
                         )
@@ -37,10 +38,12 @@ export default function Receipt(){
         </div>
             <div style={{position:"absolute",marginLeft:"1100px",marginTop:"78px"}}>
                 {
-                    numberArr.map(item=>{
+                    numberArr.map((item,index)=>{
                         return (
-                            <div>
-                                {item}
+                            <div style={{width:"200px"}}>
+                                <span>{item} <span onClick={()=>{dispatch(plusOneNumber(index))}}><i
+                                    className="fa-solid fa-plus"></i></span> <span onClick={()=>{dispatch(decOneNumber(index))}}><i
+                                    className="fa-solid fa-minus"></i></span></span>
                             </div>
                         )
                     })

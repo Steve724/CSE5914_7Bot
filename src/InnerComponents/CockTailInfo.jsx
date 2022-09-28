@@ -10,7 +10,6 @@ export default function CockTailInfo({strDrink,strDrinkThumb,strIngredient1,strI
     function handleClick(){
         if(!cocktailArr.includes(strDrink)){
             dispatch(setCocktailArr(strDrink));
-
         }
     }
     return (
