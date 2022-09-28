@@ -12,6 +12,7 @@ function MessageParser({ children, actions }){
     const step = useSelector(selectStep);
     const cocktail = useSelector(selectCocktail);
     const cocktailNumber = useSelector(selectCocktailNumber);
+    const cocktailArr = useSelector(selectCocktailArr);
     const dispatch = useDispatch();
     // const [cocktailObject,setCocktailObject] = useState({
     //     name:cocktail,
@@ -32,7 +33,9 @@ function MessageParser({ children, actions }){
             actions.handleSelector();
         }else if(message.includes('Margarita')&&step===1){
             dispatch(setCocktail(message));
-            dispatch(setCocktailArr(message));
+            if(!cocktailArr.includes(message)){
+                dispatch(setCocktailArr(message));
+            }
             actions.handleCocktail();
         }else if(!isNaN(message)&&step===1){
             var tmp = parseInt(message);

@@ -3,11 +3,15 @@ import ReactDOM from "react-dom/client";
 import "./cockTail.css"
 import {setCocktailArr,selectCocktailArr} from "../redux/features/cocktailArr/cocktailArrSlice";
 import {useDispatch,useSelector} from "react-redux";
-
+import { placeholderText } from 'react-chatbot-kit';
 export default function CockTailInfo({strDrink,strDrinkThumb,strIngredient1,strIngredient2,strIngredient3,strIngredient4}){
     const dispatch = useDispatch();
+    const cocktailArr = useSelector(selectCocktailArr);
     function handleClick(){
-        dispatch(setCocktailArr(strDrink));
+        if(!cocktailArr.includes(strDrink)){
+            dispatch(setCocktailArr(strDrink));
+
+        }
     }
     return (
         <div style={{borderWidth:"1px",borderRadius:"20px",borderColor:"black",borderStyle:"solid",marginLeft:"200px",marginRight:"800px"}}>

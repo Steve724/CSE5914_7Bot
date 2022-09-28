@@ -17,6 +17,7 @@ export default function Receipt(){
                 <tr>
                     <td>Table </td>
                     <td>{tableNumber}</td>
+                    <td style={{paddingLeft:"210px"}}>bottles</td>
                 </tr>
             </table>
             <div>
