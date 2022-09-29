@@ -14,11 +14,11 @@ function MessageParser({ children, actions }){
     const cocktailNumber = useSelector(selectCocktailNumber);
     const cocktailArr = useSelector(selectCocktailArr);
     const dispatch = useDispatch();
+    const [cocktailName,setCocktailName] = useState("");
     // const [cocktailObject,setCocktailObject] = useState({
     //     name:cocktail,
     //     number:cocktailNumber
     // })
-
     const parse = (message) => {
         if (message.includes('hello')) {
             actions.handleHello();
@@ -45,6 +45,14 @@ function MessageParser({ children, actions }){
             dispatch(setNumberArr(tmp));
             console.log(cocktailNumber);
             actions.handleCocktailNumber();
+        }else if(message.includes('No')&&step===1){
+            fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+                .then(response=>response.json())
+                .then(data=>{
+                    setCocktailName(data.drinks[0].strDrink);
+                    actions.handleRandomCocktail(data.drinks[0].strDrink);
+                    setCocktail(data.drinks[0].strDrink);
+                })
         }
     };
 

@@ -61,6 +61,15 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }));
     }
 
+    const handleRandomCocktail = (cocktailName) => {
+        const botMessage = createChatBotMessage(`Would you like to try ${cocktailName} ?`);
+        // dispatch(setStep(2));
+        // dispatch(setCocktailArr(cocktailObject));
+        setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, botMessage],
+        }));
+    }
     // Put the handleHello function in the actions object to pass to the MessageParser
     return (
         <div>
@@ -71,7 +80,8 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
                         handleTableNumber,
                         handleSelector,
                         handleCocktail,
-                        handleCocktailNumber
+                        handleCocktailNumber,
+                        handleRandomCocktail
                     },
                 });
             })}
