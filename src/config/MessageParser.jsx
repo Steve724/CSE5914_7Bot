@@ -37,7 +37,7 @@ function MessageParser({ children, actions }){
                 dispatch(setCocktailArr(message));
             }
             actions.handleCocktail();
-        }else if(!isNaN(message)&&step===1){
+        }else if(!isNaN(message)&&step===1&&message!==""){
             var tmp = parseInt(message);
             dispatch(setCocktailNumber(tmp));
             // dispatch(setCocktailArr(cocktailObject));
