@@ -3,14 +3,10 @@ import { Link } from 'react-router-dom'
 import './VideoStyles.css'
 
 
-import spaceVideo from '../assets/space.mp4'
-
 const Video = () => {
     return (
         <div className='hero'>
-            <video autoPlay loop muted id='video'>
-                <source src={spaceVideo} type='video/mp4' />
-            </video>
+            < img src="https://www.columbusnavigator.com/wp-content/uploads/2019/02/the-keep-columbus-best-bars.jpg"/>
             <div className='content'>
                 <h1>Your's BAR</h1>
                 <p>Enjoy your time</p>

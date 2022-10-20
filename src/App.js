@@ -3,7 +3,7 @@ import 'react-chatbot-kit/build/main.css'
 import MyComponent from "./MyComponent";
 import HttpCats from "./HttpCats";
 import {Routes,Route,Link} from "react-router-dom";
-import Home from "./PageComponents/Home";
+import Home from "./routes/Home";
 import About from "./PageComponents/About";
 function App() {
   return (
