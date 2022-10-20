@@ -12,6 +12,8 @@ export default function GetCockTailData(){
         let url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
         if(selector===1){
             url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a";
+        }else if(selector===2){
+            url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=vodka";
         }
         fetch(url)
             .then(response=>response.json())
