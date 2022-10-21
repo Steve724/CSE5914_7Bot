@@ -10,23 +10,20 @@ const Footer = () => {
                     <div className='location'>
                         <FaSearchLocation size={20} style={{ color: '#fff', marginRight: '2rem' }} />
                         <div>
-                            <p>123 Acme St.</p>
-                            <h4>Houston, Tx</h4>
                         </div>
                     </div>
                     <div className='phone'>
-                        <h4><FaPhone size={20} style={{ color: '##fff', marginRight: '2rem' }} /> 1-800-123-1234</h4>
+                        <h4><FaPhone size={20} style={{ color: '##fff', marginRight: '2rem' }} /> 1-666-666-6666</h4>
                     </div>
                     <div className='email'>
-                        <h4><FaMailBulk size={20} style={{ color: '##fff', marginRight: '2rem' }} /> trips@galaxy.com</h4>
+                        <h4><FaMailBulk size={20} style={{ color: '##fff', marginRight: '2rem' }} /> 7_bot@cocktail.com</h4>
                     </div>
                 </div>
                 <div className='right'>
-                    <h4>About the company</h4>
-                    <p>"Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam"</p>
+                    <h4>Team: 7_Bot</h4>
+                    <p>"We want to create a cocktail ordering chatbot for bar ordering. 
+                        The chatbot would start off asking for the table number. 
+                        Then the robot will ask for customers’ preference and give recommendations"</p>
                     <div className='social'>
                         <FaFacebook size={30} style={{ color: '##fff', marginRight: '1rem' }} />
                         <FaTwitter size={30} style={{ color: '##fff', marginRight: '1rem' }} />
