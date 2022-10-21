@@ -20,7 +20,7 @@ const Navbar = () => {
 
     return (
         <div className={color ? 'header header-bg' : 'header'}>
-           <Link to='/'><h1>Please start your order!!</h1></Link> 
+           <Link to='/cocktail'><h1>Please start your order!!</h1></Link> 
            <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                <li>
                    <Link to='/'>Home</Link>
