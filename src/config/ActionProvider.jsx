@@ -52,7 +52,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }
 
     const handleCocktailNumber = () => {
-        const botMessage = createChatBotMessage('Do you have another specific choice ?');
+        const botMessage = createChatBotMessage('Do you have another specific choice Or you have finished your order?');
         // dispatch(setStep(2));
         // dispatch(setCocktailArr(cocktailObject));
         setState((prev) => ({
@@ -62,7 +62,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }
 
     const handleRandomCocktail = (cocktailName) => {
-        const botMessage = createChatBotMessage(`Would you like to try ${cocktailName} ?`);
+        const botMessage = createChatBotMessage(`Would you like to try ${cocktailName} Or you have finished the order?`);
         // dispatch(setStep(2));
         // dispatch(setCocktailArr(cocktailObject));
         setState((prev) => ({
