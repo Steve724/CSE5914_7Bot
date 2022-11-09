@@ -8,11 +8,14 @@ export const cocktailArrSlice = createSlice({
     reducers:{
         setCocktailArr:(state,action)=>{
             state.value.push(action.payload);
+        },
+        deleteCocktail:(state,action)=>{
+            delete state.value[action.payload];
         }
     }
 })
 
-export const {setCocktailArr} = cocktailArrSlice.actions
+export const {setCocktailArr,deleteCocktail} = cocktailArrSlice.actions
 
 export const selectCocktailArr = (state) => state.cocktailArr.value;
 

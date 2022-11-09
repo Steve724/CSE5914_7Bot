@@ -4,11 +4,14 @@ import GetCockTailData from "../InnerComponents/GetCockTailData";
 import MyComponent from "../MyComponent";
 import Receipt from "../InnerComponents/Recepit";
 import {useSelector,useDispatch} from "react-redux";
+import {Link} from "react-router-dom";
 
 export default function About(){
+
     return (
         <div>
             <div style={{position:"fixed"}}>
+                <Link to='/finish'>Finish</Link>
                 <Receipt/>
                 <MyComponent/>
             </div>

@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useSelector,useDispatch} from "react-redux";
 import {setTableNumber,selectTableNumber} from "../redux/features/tableNumber/tableNumberSlice";
-import {setCocktailArr,selectCocktailArr} from "../redux/features/cocktailArr/cocktailArrSlice";
-import {setNumberArr,selectNumberArr,plusOneNumber,decOneNumber} from "../redux/features/numberArr/numberArrSlice";
+import {setCocktailArr,selectCocktailArr,deleteCocktail} from "../redux/features/cocktailArr/cocktailArrSlice";
+import {setNumberArr,selectNumberArr,plusOneNumber,decOneNumber,deleteOneNumber} from "../redux/features/numberArr/numberArrSlice";
 import {selectSelector,changeSelector} from "../redux/features/selector/selectorSlice";
 
 export default function Receipt(){
@@ -11,6 +11,9 @@ export default function Receipt(){
     const numberArr = useSelector(selectNumberArr);
     const selector = useSelector(selectSelector);
     const dispatch = useDispatch();
+    useEffect(()=>{
+
+    },[numberArr])
     return (
         <div>
 
@@ -44,12 +47,26 @@ export default function Receipt(){
         </div>
             <div style={{position:"absolute",marginLeft:"1100px",marginTop:"105px"}}>
                 {
+
                     numberArr.map((item,index)=>{
+                        if (typeof item === 'undefined'){
+                            return (
+                                <div></div>
+                            )
+                        }
+                        console.log(item);
                         return (
                             <div style={{width:"200px"}}>
                                 <span>{item} <span onClick={()=>{dispatch(plusOneNumber(index))}}><i
                                     className="fa-solid fa-plus"></i></span> <span onClick={()=>{dispatch(decOneNumber(index))}}><i
-                                    className="fa-solid fa-minus"></i></span></span>
+                                    className="fa-solid fa-minus"></i>
+                                </span>
+                                    <span style={{paddingLeft:"20px"}} onClick={()=>{
+                                        dispatch(deleteOneNumber(index))
+                                        dispatch(deleteCocktail(index))
+                                    }}><i className="fa-sharp fa-solid fa-trash"></i></span>
+                                </span>
+
                             </div>
                         )
                     })
