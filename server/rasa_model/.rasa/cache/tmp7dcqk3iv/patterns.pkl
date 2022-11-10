@@ -1,0 +1,6 @@
+[
+  {
+    "name": "drink",
+    "pattern": "(\\bmargarita\\b|\\bblue\\ margarita\\b|\\btommy's\\ margarita\\b|\\bwhitecap\\ margarita\\b|\\bstrawberry\\ margarita\\b|\\bsmashed\\ watermelon\\ margarita\\b|\\bvodka\\b|\\blong\\ vodka\\b|\\bvodka\\ slime\\b|\\bvodka\\ fizz\\b|\\bvodka\\ lemon\\b|\\bvodka\\ tonic\\b|\\bvodka\\ martini\\b|\\bvodka\\ russian\\b|\\bvodka\\ and\\ tonic\\b|\\bcoffee\\-vodka\\b|\\bnegroni\\b|\\bdry\\ martini\\b|\\bdaiquiri\\b)"
+  }
+]

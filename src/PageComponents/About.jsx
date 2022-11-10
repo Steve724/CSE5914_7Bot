@@ -12,6 +12,7 @@ export default function About(){
         <div>
             <div style={{position:"fixed"}}>
                 <Link to='/finish'>Finish</Link>
+                <Link to='/'>Home</Link>
                 <Receipt/>
                 <MyComponent/>
             </div>

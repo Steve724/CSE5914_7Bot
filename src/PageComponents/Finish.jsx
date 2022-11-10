@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Finish.css"
 import {useSelector} from "react-redux";
 import {selectNumberArr} from "../redux/features/numberArr/numberArrSlice";
@@ -8,9 +8,12 @@ import {Link} from "react-router-dom";
 export default function Finish(){
     const numberArr = useSelector(selectNumberArr);
     const cocktailArr = useSelector(selectCocktailArr);
+    const [money,setMoney] = useState(0);
+
     return (
         <div>
             <Link to="/cocktail">Cocktail</Link>
+            <span style={{}}><Link to='/' >Home</Link></span>
             <table className="body-wrap">
                 <tbody>
                 <tr>
@@ -46,28 +49,17 @@ export default function Finish(){
                                                                             if(typeof item === 'undefined'){
                                                                                 return <div></div>
                                                                             }
+
                                                                             return <tr>
                                                                                 <td>{cocktailArr[key]}</td>
                                                                                 <td className="alignright">{numberArr[key]}</td>
                                                                             </tr>
                                                                         })
                                                                     }
-                                                                    <tr>
-                                                                        <td>Service 1</td>
-                                                                        <td className="alignright">$ 20.00</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>Service 2</td>
-                                                                        <td className="alignright">$ 10.00</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>Service 3</td>
-                                                                        <td className="alignright">$ 6.00</td>
-                                                                    </tr>
                                                                     <tr className="total">
                                                                         <td className="alignright" width="80%">Total
                                                                         </td>
-                                                                        <td className="alignright">$ 36.00</td>
+                                                                        <td className="alignright">{money}</td>
                                                                     </tr>
                                                                     </tbody>
                                                                 </table>
@@ -84,7 +76,7 @@ export default function Finish(){
                                             </tr>
                                             <tr>
                                                 <td className="content-block">
-                                                    Company Inc. 123 Van Ness, San Francisco 94102
+                                                    Company Inc. Ohio State 43216
                                                 </td>
                                             </tr>
                                             </tbody>

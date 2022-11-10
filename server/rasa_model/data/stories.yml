@@ -1,0 +1,51 @@
+version: "3.1"
+
+stories:
+
+- story: order path 1
+  steps:
+  - intent: greet
+  - action: action_greet
+  - intent: tell_table_num
+  - action: utter_table_num
+  - action: utter_take_order
+  - intent: order
+  - action: action_order_res
+  - action: utter_ask_more
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story: order path 2
+  steps:
+  - intent: greet
+  - action: action_greet
+  - intent: order
+  - action: action_order_res
+  - action: utter_ask_more
+  - intent: deny
+  - action: utter_goodbye
+
+- story: order path 3
+  steps:
+  - intent: order
+  - action: action_order_res
+  - action: utter_ask_more
+  - intent: order
+  - action: action_order_res
+  - intent: deny
+  - action: utter_goodbye
+
+- story: order path 4
+  steps:
+  - intent: tell_table_num
+  - action: utter_table_num
+  - action: utter_take_order
+  - intent: order
+  - action: action_order_res
+  - intent: affirm
+  - action: utter_take_order
+  - intent: order
+  - action: action_order_res
+  - intent: deny
+  - action: utter_goodbye

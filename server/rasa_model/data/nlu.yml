@@ -1,0 +1,145 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: tell_table_num
+  examples: |
+    - My table number is [47](table_num).
+    - My number is [10](table_num).
+    - [25] (table_num) is my table number.
+    - [11] (table_num)
+    - [5] (table_num)
+
+- intent: order
+  examples: |
+    - I want [1](quantity) [vodka martini](drink).
+    - I will take [1](quantity) cup of [negroni](drink).
+    - Give me a [dry martini](drink).
+    - A [blue margarita](drink), thanks.
+    - I will do [2](quantity) cups of [daiquiri](drink).
+    - I want to order a drink.
+    - I want to order now.
+    - I'd like to order something.
+    - Can I have [5](quantity) [strawberry margarita](drink)?
+    - I want [vodka slime](drink).
+    - I want [whitecap margarita](drink).
+    - I want [strawberry margarita](drink).
+    - I want [tommy's margarita](drink).
+    - I want [smashed watermelon margarita](drink).
+
+- intent: ask_recom
+  examples: |
+    - I'm not sure what to get.
+    - Do you have any recommandation?
+    - What would you recommand?
+    - I can't decide on a drink.
+    - Can you give me any recommandations?
+    - I want some recommandations.
+
+- intent: check_list
+  examples: |
+    - What have I ordered so far?
+    - Tell me what drinks I have now.
+    - Repeat the drinks I have ordered.
+    - Can you let me know what I have now?
+    - Let me see my order list please.
+    - I want to check my order.
+
+- intent: remove_drink
+  examples: |
+    - Remove [negroni](drink) from my order
+    - Delete [dry martini](drink)
+    - I don't want [margarita](drink) anymore.
+    - Can you remove [margarita](drink) from my order please?
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: thank
+  examples: |
+    - thank you!
+    - thanks
+    - ok thanks
+    - appriciate
+    - Thank you so much!
+    - txs
+
+- intent: random
+  examples: |
+    - lasdjgapw3,
+    - mx,cvhja;3nsadlfj
+    - a;s4nasdf
+    - 0asjndfksal,asjh3
+
+- lookup: drink
+  examples: |
+    - margarita
+    - blue margarita
+    - tommy's margarita
+    - whitecap margarita
+    - strawberry margarita
+    - smashed watermelon margarita
+    - vodka
+    - long vodka
+    - vodka slime
+    - vodka fizz
+    - vodka lemon
+    - vodka tonic
+    - vodka martini
+    - vodka russian
+    - vodka and tonic
+    - coffee-vodka
+    - negroni
+    - dry martini
+    - daiquiri

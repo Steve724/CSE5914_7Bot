@@ -14,6 +14,15 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const cocktail = useSelector(selectCocktail);
     const cocktailNumber = useSelector(selectCocktailNumber);
     const cocktailArr = useSelector(selectCocktailArr);
+    const handleMsg = (message) => {
+        const botMessage = createChatBotMessage(message);
+
+        setState((prev) => ({
+            ...prev,
+            messages: [...prev.messages, botMessage],
+        }));
+    };
+
     const handleHello = () => {
         const botMessage = createChatBotMessage('Hello. Nice to meet you.');
 
@@ -81,7 +90,8 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
                         handleSelector,
                         handleCocktail,
                         handleCocktailNumber,
-                        handleRandomCocktail
+                        handleRandomCocktail,
+                        handleMsg
                     },
                 });
             })}

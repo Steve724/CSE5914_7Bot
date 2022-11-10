@@ -1,0 +1,105 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - order
+  - tell_table_num
+  - ask_recom
+  - check_list
+  - remove_drink
+  - bot_challenge
+  - thank
+  - random
+
+entities:
+  - drink
+  - table_num
+  - quantity
+
+slots:
+  drink:
+    type: text
+    influence_conversation: true
+    mappings:
+     - type: from_entity
+       entity: drink
+  table_num:
+    type: float
+    influence_conversation: false
+    mappings:
+     - type: from_entity
+       entity: table_num
+  quantity:
+    type: float
+    min_value: 0
+    max_value: 1000
+    influence_conversation: false
+    mappings:
+     - type: from_entity
+       entity: quantity
+
+
+
+responses:
+  utter_greet:
+  - text: "Hey! Nice to have you here today!"
+  - text: "Hello! How can I help you?"
+
+  utter_take_order:
+  - text: "What can I get for you?"
+  - text: "Ok what do you want to get?"
+
+  utter_recom:
+  - text: "Hmmm, here are some options you may like:"
+  - text: "Hmmm, I got some drinks I think you may enjoy:"
+
+  utter_ask_num:
+  - text: "What is your table number?"
+  - text: "Please let me know your table number."
+
+  utter_table_num:
+  - text: "Your table number is {table_num}."
+
+  utter_thank:
+  - text: "You are welcome!"
+  - text: "No problem!"
+  - text: "My pleasure!"
+
+  utter_ask_more:
+  - text: "Is there anything else you need?"
+  - text: "Can I get you anything else?"
+  - text: "Is there anything else I can get for you?"
+
+  utter_check_list:
+  - text: "Let me check."
+  - text: "Let's see."
+  - text: "Let me see."
+
+  utter_remove_drink:
+  - text: "Ok! Let me see what I can do."
+
+  utter_goodbye:
+  - text: "Ok! Enjoy your drink!"
+  - text: "Ok! See you next time! Enjoy your drink!"
+
+  utter_iamabot:
+  - text: "Yes, I am a bot, created by 7-bot."
+  - text: "I am a cocktail ordering bot."
+
+  utter_ask_specific_drink:
+  - text: "Cool, what do you want to order?"
+  - text: "Ok, what drink can I get for you?"
+
+  utter_random:
+  - text: "Sorry, I didn't quite get it. Can you rephrase it?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+  - action_order_res
+  - action_greet
